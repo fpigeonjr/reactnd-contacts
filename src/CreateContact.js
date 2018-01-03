@@ -5,11 +5,14 @@ import SerializeForm from "form-serialize";
 
 class CreateContacts extends Component {
   state = {};
-  handleSubmit(e) {
+
+  handleSubmit = e => {
     e.preventDefault();
     const values = SerializeForm(e.target, { hash: true });
-    if (this.props.onCreateContact) this.props.onCreateContact(values);
-  }
+    if (this.props.onCreateContact) {
+      this.props.onCreateContact(values);
+    }
+  };
   render() {
     return (
       <div>
